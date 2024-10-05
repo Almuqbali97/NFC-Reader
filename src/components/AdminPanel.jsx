@@ -9,8 +9,8 @@ const AdminPanel = () => {
 
     useEffect(() => {
         // Fetch mock data
-        // axios.get('http://localhost:5000/api/employees')
-        axios.get('https://nfc-reader-backend.vercel.app/api/employees')
+        axios.get('http://localhost:5000/api/employees')
+        // axios.get('https://nfc-reader-backend.vercel.app/api/employees')
             .then(response => setEmployees(response.data))
             .catch(error => console.log(error));
     }, []);
@@ -28,7 +28,7 @@ const AdminPanel = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         // axios.post('http://localhost:5000/api/employee', newEmployee)
-        axios.post('https://nfc-reader-backend.vercel.app/api/employee', newEmployee)
+        axios.post('https://nfc-reader-backend.onrender.com/api/employee', newEmployee)
             .then(response => {
                 setEmployees([...employees, response.data]);  // Add the new employee to the state
                 setNewEmployee({ name: '', image: '' });  // Reset the form
