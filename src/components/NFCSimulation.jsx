@@ -15,7 +15,8 @@ const NFCSimulation = () => {
 
     // Function to fetch employee details based on the unique ID
     const fetchEmployee = (id) => {
-        axios.get(`http://localhost:5000/api/employee/${id}`)
+        // axios.get(`http://localhost:5000/api/employee/${id}`)
+        axios.get(`https://nfc-reader-backend.vercel.app//api/employee/${id}`)
             .then(response => {
                 setEmployee(response.data);
                 setError('');
